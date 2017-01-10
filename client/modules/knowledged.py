@@ -46,5 +46,7 @@ def isValid(text):
         return True
     elif re.search(r'\bhow old\b', text, re.IGNORECASE):
         return True
+    elif re.search(r'\bcalculate\b', text, re.IGNORECASE):
+        return True
     else:
         return False
