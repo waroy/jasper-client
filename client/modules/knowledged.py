@@ -16,13 +16,14 @@ def handle(text, mic, profile):
     client = wolframalpha.Client(app_id)
     logger = logging.getLogger(__name__)
     query = client.query(text)
-    #logger.debug(query.pods)  
+      
     #if len(query.pods) > 0:
     texts = next(query.results, "I can not find anything")
-    if texts == "I can not find anything":
-	texts = "I can not find anything"
+    #logger.debug( type(texts))
+    if  type(texts) is str:
+	    texts = "I can not find anything"
     else:
-	texts = texts.text	       
+	    texts = texts.text	       
 	# pod = query.pods[1]
        # if pod.text:
        #     texts = pod.text
