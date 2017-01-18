@@ -18,9 +18,9 @@ def handle(text, mic, profile):
     query = client.query(text)
       
     #if len(query.pods) > 0:
-    texts = next(query.results, "I can not find anything")
+    texts = next(query.results)
     #logger.debug( type(texts))
-    if  type(texts) is str:
+    if  texts is None:
 	    texts = "I can not find anything"
     else:
 	    texts = texts.text	       
