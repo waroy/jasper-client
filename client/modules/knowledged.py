@@ -36,17 +36,19 @@ def handle(text, mic, profile):
 
 
 def isValid(text):
-    if re.search(r'\bwho\b', text, re.IGNORECASE):
-        return True
-    elif re.search(r'\bwhat\b', text, re.IGNORECASE):
-        return True
-    elif re.search(r'\bhow much\b', text, re.IGNORECASE):
-        return True
-    elif re.search(r'\bhow MANY\b', text, re.IGNORECASE):
-        return True
-    elif re.search(r'\bhow old\b', text, re.IGNORECASE):
-        return True
-    elif re.search(r'\bcalculate\b', text, re.IGNORECASE):
-        return True
-    else:
-        return False
+    # if re.search(r'\bwho\b', text, re.IGNORECASE):
+    #     return True
+    # elif re.search(r'\bwhat\b', text, re.IGNORECASE):
+    #     return True
+    # elif re.search(r'\bhow much\b', text, re.IGNORECASE):
+    #     return True
+    # elif re.search(r'\bhow MANY\b', text, re.IGNORECASE):
+    #     return True
+    # elif re.search(r'\bhow old\b', text, re.IGNORECASE):
+    #     return True
+    # elif re.search(r'\bcalculate\b', text, re.IGNORECASE):
+    #     return True
+    # else:
+    #     return False
+    return bool(re.search(r'\b(who?|what|how much|how many|how old|' +
+                        r'calculate)\b', text, re.IGNORECASE))
